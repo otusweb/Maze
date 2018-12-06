@@ -12,10 +12,11 @@ import UIKit
 let configurationCellReuseIdentifier = "configurationCell"
 
 class ConfigurationsTableViewController: UITableViewController {
-    let controllerClass: MazeProtocol.Type
+    let mazePath: MazePath
     
-    public init(inClass: MazeProtocol.Type) {
-        controllerClass = inClass
+    public init(mazePath: MazePath) {
+        self.mazePath = mazePath
+        
         super.init(style: .plain)
     }
     
@@ -44,7 +45,7 @@ class ConfigurationsTableViewController: UITableViewController {
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return controllerClass.configurations().count
+        return mazePath.configurations.count
     }
     
     
@@ -52,18 +53,14 @@ class ConfigurationsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: configurationCellReuseIdentifier, for: indexPath)
         
         // Configure the cell...
-        cell.textLabel?.text = controllerClass.configurations().allKeys[indexPath.row] as? String
+        cell.textLabel?.text = mazePath.configurations[indexPath.row].label
         
         return cell
     }
     
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectorKey = controllerClass.configurations().allKeys[indexPath.row]
-        let selectorString = controllerClass.configurations().object(forKey: selectorKey) as! String
-        let selector = NSSelectorFromString(selectorString)
-        
-        let controller = (controllerClass as! NSObjectProtocol).perform(selector).takeUnretainedValue() as! UIViewController
+        let controller = mazePath.configurations[indexPath.row].configure()
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

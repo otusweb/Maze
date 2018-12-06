@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C040BB121B94C1D00344A4C /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C040BB021B94C1C00344A4C /* Maze.swift */; };
 		1C39013C215930DB003F2809 /* MazeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C39013B215930DB003F2809 /* MazeTableViewController.swift */; };
 		1C39014021593774003F2809 /* ConfigurationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C39013F21593774003F2809 /* ConfigurationsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C040BB021B94C1C00344A4C /* Maze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
 		1C390123215818E0003F2809 /* libMaze.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMaze.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C39013B215930DB003F2809 /* MazeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeTableViewController.swift; sourceTree = "<group>"; };
 		1C39013F21593774003F2809 /* ConfigurationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationsTableViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				1C39013B215930DB003F2809 /* MazeTableViewController.swift */,
 				1C39013F21593774003F2809 /* ConfigurationsTableViewController.swift */,
+				1C040BB021B94C1C00344A4C /* Maze.swift */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 			files = (
 				1C39014021593774003F2809 /* ConfigurationsTableViewController.swift in Sources */,
 				1C39013C215930DB003F2809 /* MazeTableViewController.swift in Sources */,
+				1C040BB121B94C1D00344A4C /* Maze.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
