@@ -59,9 +59,9 @@ public struct MazePath {
 public struct MazeConfiguration
 {
     let label:String
-    let configure:()->UIViewController
+    let configure:(UINavigationController)->Void
     
-    public init(label:String, configure:@escaping (()-> UIViewController))
+    public init(label:String, configure:@escaping ((UINavigationController)-> Void))
     {
         self.label = label
         self.configure = configure
