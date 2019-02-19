@@ -60,8 +60,12 @@ class ConfigurationsTableViewController: UITableViewController {
     
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = mazePath.configurations[indexPath.row].configure()
-        self.navigationController?.pushViewController(controller, animated: true)
+
+        let selectorKey = controllerClass.configurations().allKeys[indexPath.row]
+        let selectorString = controllerClass.configurations().object(forKey: selectorKey) as! String
+        let selector = NSSelectorFromString(selectorString)
+        
+        (controllerClass as! NSObjectProtocol).perform(selector, with:self.navigationController!)
     }
 }
 
