@@ -14,9 +14,9 @@ public func stretchInsideContainerController(controller:UIViewController) -> UIV
     controller.view.translatesAutoresizingMaskIntoConstraints = false
     
     let containingController = UIViewController()
-    containingController.addChildViewController(controller)
+    containingController.addChild(controller)
     containingController.view.addSubview(controller.view)
-    controller.didMove(toParentViewController: containingController)
+    controller.didMove(toParent: containingController)
     
     //stretch vertically
     var constraints = NSLayoutConstraint.constraints(
@@ -44,9 +44,9 @@ public func topOfContainingController(controller:UIViewController)->UIViewContro
     controller.view.translatesAutoresizingMaskIntoConstraints = false
     
     let containingController = UIViewController()
-    containingController.addChildViewController(controller)
+    containingController.addChild(controller)
     containingController.view.addSubview(controller.view)
-    controller.didMove(toParentViewController: containingController)
+    controller.didMove(toParent: containingController)
     
     //center vertically
     var constraints = NSLayoutConstraint.constraints(
